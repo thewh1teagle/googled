@@ -12,7 +12,7 @@ pip install --upgrade git+https://github.com/thewh1teagle/googled
 Examples can be found under `examples` folder
 
 ##### You **must** retrive credentials.json for your Google drive API
-1. Go to console.cloud.google.com/
+1. Go to https://console.cloud.google.com/
 2. Create new google project
 3. Name it, create it, choose it in dropdown on top
 4. Navigate to https://console.cloud.google.com/marketplace/product/google/drive.googleapis.com
