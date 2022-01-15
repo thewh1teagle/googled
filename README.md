@@ -15,9 +15,9 @@ Examples can be found under `examples` folder
 1. Go to console.cloud.google.com/
 2. Create new google project
 3. Name it, create it, choose it in dropdown on top
-4. Navigate to console.cloud.google.com/marketplace/product/google/drive.googleapis.com
+4. Navigate to https://console.cloud.google.com/marketplace/product/google/drive.googleapis.com
 5. enable it
-6. Navigate to console.cloud.google.com/apis/credentials/consent
+6. Navigate to https://console.cloud.google.com/apis/credentials/consent
 7. choose external, and create
 8. fill app name, user support mail, developer contact address, save and  continue
 9. select add or remove scopes, search google drive, select all, click right, select all again, click update in the bottom
