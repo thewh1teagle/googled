@@ -2,3 +2,4 @@ google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 python-magic-bin; sys_platform == 'win32'
+python-magic; sys_platform == 'darwin'
