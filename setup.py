@@ -22,7 +22,7 @@ setup(
         "google",
         "storage",
     ],  # Keywords that define your package best
-    # install_requires=requirements,  # I get to this in a second
+    install_requires=requirements,  # I get to this in a second
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",  # Define that your audience are developers
