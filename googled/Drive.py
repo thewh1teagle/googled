@@ -42,6 +42,30 @@ class Drive:
         self.drive: googleapiclient.discovery.Resource = build(
             'drive', 'v3', credentials=creds)
 
+    def list_files_in_folder(self, name):
+        # First, get the folder ID by querying by mimeType and name
+        folderId = self.drive.files().list(q = f"mimeType = 'application/vnd.google-apps.folder' and name = '{name}'", pageSize=10, fields="nextPageToken, files(id, name, createdTime)").execute()
+        # this gives us a list of all folders with that name
+        folderIdResult = folderId.get('files', [])
+        # however, we know there is only 1 folder with that name, so we just get the id of the 1st item in the list
+        folder_id = folderIdResult[0].get('id')
+        results = self.drive.files().list(q = "'" + folder_id + "' in parents", pageSize=10, fields="nextPageToken, files(id, name, createdTime)").execute()
+        items = results.get('files', [])
+        return items
+
+    def delete_multiple_files(self, ids):
+        def delete_file_callback(req_id, res, exception):
+            if exception is not None:
+                raise exception
+            else:
+                print('deleted file')
+        batch = self.drive.new_batch_http_request(callback=delete_file_callback)
+        for file_id in ids:
+            batch.add(self.drive.files().delete(fileId=file_id))
+        batch.execute()
+
+
+
     def listFiles(self, show_output=True):
         results = self.drive.files().list(
             pageSize=20, fields="nextPageToken, files(id, name)").execute()
