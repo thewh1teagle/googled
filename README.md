@@ -6,7 +6,7 @@ Simple library for Google Drive in Python
 #### Setup
 Currently available in Github
 ```bash
-pip install --upgrade https://github.com/thewh1teagle/googled/tarball/main
+pip install --upgrade git+https://github.com/thewh1teagle/googled
 ```
 
 Examples can be found under `examples` folder
